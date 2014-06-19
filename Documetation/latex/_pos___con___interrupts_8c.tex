@@ -1,0 +1,1517 @@
+\hypertarget{_pos___con___interrupts_8c}{
+\section{Pos\_\-Con\_\-Interrupts.c File Reference}
+\label{_pos___con___interrupts_8c}\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include $<$util/delay.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_pos___con___interrupts_8c_a9d4ad5467cb8a39312513dfaaf4d950a}{FCPU}~11059200ul
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_pos___con___interrupts_8c_af87425963403c39dd2a5686722662e1b}{servo1\_\-pin\_\-config} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a9cbd58ccc49c66f6691fc3e8a4e06c07}{servo2\_\-pin\_\-config} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_aea7136b3f5f3dee0bba462ad740018e0}{servo3\_\-pin\_\-config} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a17cf811a885634d71a23e8d4a20457f0}{motion\_\-pin\_\-config} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a5e83e38113e61aa98a5737499e18a31b}{servo\_\-1} (unsigned char degrees)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a581d9af2c6c9d23ca521f637075e1bc1}{servo\_\-2} (unsigned char degrees)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a13cace908a54e6c7b6e7ff259b2b1d90}{servo\_\-3} (unsigned char degrees)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a968c314be24f7043eeff034ebf7c4a03}{timer1\_\-init} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_ae20e0ac384c729be97c963cb470456a9}{left\_\-encoder\_\-pin\_\-config} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a0db68d18b578ab9e12bc1d80915ef0d7}{right\_\-encoder\_\-pin\_\-config} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a0c6063fcb1153fa4c8c348b9e759be78}{buzzer\_\-pin\_\-config} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a5c2ba800834495bb295891490cb1c760}{port\_\-init} ()
+\item 
+void \hyperlink{_pos___con___interrupts_8c_aff7831bb17c1206ab082415ee14e21b1}{left\_\-position\_\-encoder\_\-interrupt\_\-init} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a1333f7476858c2d76f7d725dfb0e7d88}{right\_\-position\_\-encoder\_\-interrupt\_\-init} (void)
+\item 
+\hyperlink{_pos___con___interrupts_8c_a6225c50fbafa01589351ed487223aacb}{ISR} (INT5\_\-vect)
+\item 
+\hyperlink{_pos___con___interrupts_8c_a98a290ada01eb27fd2ff4564371566e5}{ISR} (INT4\_\-vect)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a0b5f946b51550fe862b59f91ae5fe9f9}{forward} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a3344ca821ab12c0ceaa9a9c03b473462}{back} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_af58faf62f4e3606140250fb9ed314db5}{left} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_ae56b9a694abd24fe3e7af591fc50b748}{right} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a9f675d6f341de272935fc3a4bd7683ce}{soft\_\-left} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a86d205d334c3761364b7db60cb0257b6}{soft\_\-right} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a84253b553e3fc3d181945f643e7aa82d}{soft\_\-left\_\-2} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a6ce417f3e8c28824215c61637845f18c}{soft\_\-right\_\-2} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_aacf6bf8e121fea8b0a92d7197b73fe27}{stop} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_ae79e92df10e04334f214055aa5b8c658}{angle\_\-rotate} (unsigned int \hyperlink{_pos___con___interrupts_8c_a9719b725d5dde7ae77cf440b08ab2e21}{Degrees})
+\item 
+void \hyperlink{_pos___con___interrupts_8c_afc027345bdb5eb901ff0d7aa5ffa7306}{linear\_\-distance\_\-mm} (unsigned int DistanceInMM)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a3a0711f34af615c274e67a580696f9ad}{forward\_\-mm} (unsigned int DistanceInMM)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a211524abdbae5dd0a77807b843ec60c7}{back\_\-mm} (unsigned int DistanceInMM)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_afb8f5ede968f85a107d7bd0e5017634f}{left\_\-degrees} (unsigned int \hyperlink{_pos___con___interrupts_8c_a9719b725d5dde7ae77cf440b08ab2e21}{Degrees})
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a8cf9e2dc043ac2c788c78e6dd407e6e8}{right\_\-degrees} (unsigned int \hyperlink{_pos___con___interrupts_8c_a9719b725d5dde7ae77cf440b08ab2e21}{Degrees})
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a1013e84d64ce4284bdd33542678b36ba}{soft\_\-left\_\-degrees} (unsigned int \hyperlink{_pos___con___interrupts_8c_a9719b725d5dde7ae77cf440b08ab2e21}{Degrees})
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a2c63b1157eee42d68b242cd9a37eec98}{soft\_\-right\_\-degrees} (unsigned int \hyperlink{_pos___con___interrupts_8c_a9719b725d5dde7ae77cf440b08ab2e21}{Degrees})
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a3bc73fd02a38e7bd23dd8ecd87601c51}{soft\_\-left\_\-2\_\-degrees} (unsigned int \hyperlink{_pos___con___interrupts_8c_a9719b725d5dde7ae77cf440b08ab2e21}{Degrees})
+\item 
+void \hyperlink{_pos___con___interrupts_8c_ac5f0c8df1383322f922faf6a4ea30d57}{soft\_\-right\_\-2\_\-degrees} (unsigned int \hyperlink{_pos___con___interrupts_8c_a9719b725d5dde7ae77cf440b08ab2e21}{Degrees})
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a578f7cc9b705ce549aa856c927b102e8}{timer5\_\-init} ()
+\item 
+void \hyperlink{_pos___con___interrupts_8c_aeb91982ef0f52d5adeb343ea450e84a0}{velocity} (unsigned char, unsigned char)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a049f338430ccb37404fd4bd4f505a0fa}{motors\_\-delay} ()
+\item 
+unsigned char \hyperlink{_pos___con___interrupts_8c_a3aedb5aa08d1a59fd4576fc4493e411d}{ADC\_\-Conversion} (unsigned char)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_af55f75f83e87baf043c835ef54412b99}{lcd\_\-port\_\-config} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a27f01c5d49b89503a6d1380f151b19af}{adc\_\-pin\_\-config} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}{adc\_\-init} ()
+\item 
+void \hyperlink{_pos___con___interrupts_8c_af1987bcf7f4a9f3bfbb930ace592d829}{print\_\-sensor} (char row, char coloumn, unsigned char channel)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a10cb8a1450bfb05cd9c72ad09ce7f2fe}{motion\_\-set} (unsigned char Direction)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a4dd394839cc1e77986c84b3a3679bcd8}{buzzer\_\-on} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a93d07c81691fec7a85ea85117d6eca4f}{buzzer\_\-off} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_abbbf5055286d09a73b87f57f71dfd0b9}{uart0\_\-init} (void)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a53de10de8ca6fdcb1c13505a6b97d5f9}{do\_\-work} ()
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a15fb3bddc638cecc4b4ce8532982e538}{move\_\-till\_\-junction} ()
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a9034be41e47d844c845946f5d5dd36d4}{reach\_\-dest} (int a, int b)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_a553566c3061d7dc07ac639a71aaff70d}{drop\_\-object} ()
+\item 
+\hyperlink{_pos___con___interrupts_8c_ab5f8e79f6ffa3be348924e573e8dcfd1}{SIGNAL} (SIG\_\-USART0\_\-RECV)
+\item 
+void \hyperlink{_pos___con___interrupts_8c_ab01199c927ceda6f9520c7afb0f1b099}{init\_\-devices} ()
+\item 
+int \hyperlink{_pos___con___interrupts_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \hyperlink{_pos___con___interrupts_8c_a433b1c9921d3b90f7c145c781a43f325}{data}
+\item 
+unsigned long int \hyperlink{_pos___con___interrupts_8c_ad4d883fb592328b3a01dcd7c28b5a0ae}{ShaftCountLeft} = 0
+\item 
+unsigned long int \hyperlink{_pos___con___interrupts_8c_a397e402cf787d59092e911b079f08b12}{ShaftCountRight} = 0
+\item 
+unsigned int \hyperlink{_pos___con___interrupts_8c_a9719b725d5dde7ae77cf440b08ab2e21}{Degrees}
+\item 
+int \hyperlink{_pos___con___interrupts_8c_ae6e15b0f6771b4754dc724ff8f054a9b}{g\_\-flag} = 0
+\item 
+unsigned char \hyperlink{_pos___con___interrupts_8c_a7478dc1bbf98fafa771a4e2c1a27f70b}{ADC\_\-Value}
+\item 
+unsigned char \hyperlink{_pos___con___interrupts_8c_a829b33ef64236fbd112c4c6973051b8b}{flag} = 0
+\item 
+unsigned char \hyperlink{_pos___con___interrupts_8c_a40b3670b4091cb5fd22b40e0a6339864}{Left\_\-white\_\-line} = 0
+\item 
+unsigned char \hyperlink{_pos___con___interrupts_8c_ac84e16450d12eed142395bfcf7444ee7}{Center\_\-white\_\-line} = 0
+\item 
+unsigned char \hyperlink{_pos___con___interrupts_8c_a714d95b2e8eafc387d408dbd07bb267d}{Right\_\-white\_\-line} = 0
+\item 
+int \hyperlink{_pos___con___interrupts_8c_a4eaab29a4b95a3df43f309d4db0537f9}{a1}
+\item 
+int \hyperlink{_pos___con___interrupts_8c_a80a694fb0f4379c31cdb69faf50a4b4a}{b1}
+\item 
+int \hyperlink{_pos___con___interrupts_8c_a7e14c1f8a9ffaa9d4a89828706d25998}{c1}
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{_pos___con___interrupts_8c_a9d4ad5467cb8a39312513dfaaf4d950a}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!FCPU@{FCPU}}
+\index{FCPU@{FCPU}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{FCPU}]{\setlength{\rightskip}{0pt plus 5cm}\#define FCPU~11059200ul}}
+\label{_pos___con___interrupts_8c_a9d4ad5467cb8a39312513dfaaf4d950a}
+
+
+\subsection{Function Documentation}
+\hypertarget{_pos___con___interrupts_8c_a3aedb5aa08d1a59fd4576fc4493e411d}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!ADC\_\-Conversion@{ADC\_\-Conversion}}
+\index{ADC\_\-Conversion@{ADC\_\-Conversion}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{ADC\_\-Conversion}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char ADC\_\-Conversion (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{Ch}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a3aedb5aa08d1a59fd4576fc4493e411d}
+
+\begin{DoxyCode}
+{
+        unsigned char a;
+        if(Ch>7)
+        {
+                ADCSRB = 0x08;
+        }
+        Ch = Ch & 0x07;                         
+        ADMUX= 0x20| Ch;                        
+        ADCSRA = ADCSRA | 0x40;         //Set start conversion bit
+        while((ADCSRA&0x10)==0);        //Wait for conversion to complete
+        a=ADCH;
+        ADCSRA = ADCSRA|0x10; //clear ADIF (ADC Interrupt Flag) by writing 1 to i
+      t
+        ADCSRB = 0x00;
+        return a;
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!adc\_\-init@{adc\_\-init}}
+\index{adc\_\-init@{adc\_\-init}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{adc\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void adc\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a1e942fcd91f79d49e4ddb8d7e9d3ef95}
+
+\begin{DoxyCode}
+{
+        ADCSRA = 0x00;
+        ADCSRB = 0x00;          //MUX5 = 0
+        ADMUX = 0x20;           //Vref=5V external --- ADLAR=1 --- MUX4:0 = 0000
+        ACSR = 0x80;
+        ADCSRA = 0x86;          //ADEN=1 --- ADIE=1 --- ADPS2:0 = 1 1 0
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a27f01c5d49b89503a6d1380f151b19af}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!adc\_\-pin\_\-config@{adc\_\-pin\_\-config}}
+\index{adc\_\-pin\_\-config@{adc\_\-pin\_\-config}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{adc\_\-pin\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void adc\_\-pin\_\-config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a27f01c5d49b89503a6d1380f151b19af}
+
+\begin{DoxyCode}
+{
+ DDRF = 0x00; 
+ PORTF = 0x00;
+ DDRK = 0x00;
+ PORTK = 0x00;
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_ae79e92df10e04334f214055aa5b8c658}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!angle\_\-rotate@{angle\_\-rotate}}
+\index{angle\_\-rotate@{angle\_\-rotate}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{angle\_\-rotate}]{\setlength{\rightskip}{0pt plus 5cm}void angle\_\-rotate (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{Degrees}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_ae79e92df10e04334f214055aa5b8c658}
+
+\begin{DoxyCode}
+{
+ float ReqdShaftCount = 0;
+ unsigned long int ReqdShaftCountInt = 0;
+
+ ReqdShaftCount = (float) Degrees/ 4.090; // division by resolution to get shaft 
+      count
+ ReqdShaftCountInt = (unsigned int) ReqdShaftCount;
+ ShaftCountRight = 0; 
+ ShaftCountLeft = 0; 
+
+ while (1)
+ {
+  if((ShaftCountRight >= ReqdShaftCountInt) | (ShaftCountLeft >= ReqdShaftCountIn
+      t))
+  break;
+ }
+ stop(); //Stop action
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a3344ca821ab12c0ceaa9a9c03b473462}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!back@{back}}
+\index{back@{back}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{back}]{\setlength{\rightskip}{0pt plus 5cm}void back (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a3344ca821ab12c0ceaa9a9c03b473462}
+
+\begin{DoxyCode}
+{
+  motion_set(0x09);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a211524abdbae5dd0a77807b843ec60c7}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!back\_\-mm@{back\_\-mm}}
+\index{back\_\-mm@{back\_\-mm}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{back\_\-mm}]{\setlength{\rightskip}{0pt plus 5cm}void back\_\-mm (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{DistanceInMM}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a211524abdbae5dd0a77807b843ec60c7}
+
+\begin{DoxyCode}
+{
+ back();
+ linear_distance_mm(DistanceInMM);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a93d07c81691fec7a85ea85117d6eca4f}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!buzzer\_\-off@{buzzer\_\-off}}
+\index{buzzer\_\-off@{buzzer\_\-off}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{buzzer\_\-off}]{\setlength{\rightskip}{0pt plus 5cm}void buzzer\_\-off (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a93d07c81691fec7a85ea85117d6eca4f}
+
+\begin{DoxyCode}
+{
+ unsigned char port_restore = 0;
+ port_restore = PINC;
+ port_restore = port_restore & 0xF7;
+ PORTC = port_restore;
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a4dd394839cc1e77986c84b3a3679bcd8}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!buzzer\_\-on@{buzzer\_\-on}}
+\index{buzzer\_\-on@{buzzer\_\-on}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{buzzer\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}void buzzer\_\-on (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a4dd394839cc1e77986c84b3a3679bcd8}
+
+\begin{DoxyCode}
+{
+ unsigned char port_restore = 0;
+ port_restore = PINC;
+ port_restore = port_restore | 0x08;
+ PORTC = port_restore;
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a0c6063fcb1153fa4c8c348b9e759be78}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!buzzer\_\-pin\_\-config@{buzzer\_\-pin\_\-config}}
+\index{buzzer\_\-pin\_\-config@{buzzer\_\-pin\_\-config}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{buzzer\_\-pin\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void buzzer\_\-pin\_\-config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a0c6063fcb1153fa4c8c348b9e759be78}
+
+\begin{DoxyCode}
+{
+ DDRC = DDRC | 0x08;            //Setting PORTC 3 as outpt
+ PORTC = PORTC & 0xF7;          //Setting PORTC 3 logic low to turnoff buzzer
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a53de10de8ca6fdcb1c13505a6b97d5f9}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!do\_\-work@{do\_\-work}}
+\index{do\_\-work@{do\_\-work}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{do\_\-work}]{\setlength{\rightskip}{0pt plus 5cm}void do\_\-work (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a53de10de8ca6fdcb1c13505a6b97d5f9}
+
+\begin{DoxyCode}
+              {
+
+        init_devices();
+        float ReqdShaftCount = 0;
+        unsigned long int ReqdShaftCountInt = 0;
+
+        ReqdShaftCount = 100 / 5.338; // division by resolution to get shaft coun
+      t
+        ReqdShaftCountInt = (unsigned long int) ReqdShaftCount;
+  
+        ShaftCountRight = 0;
+        
+        while(1)
+        {
+
+                Left_white_line = ADC_Conversion(3);    //Getting data of Left WL
+       Sensor
+                Center_white_line = ADC_Conversion(2);  //Getting data of Center 
+      WL Sensor
+                Right_white_line = ADC_Conversion(1);   //Getting data of Right W
+      L Sensor
+
+                flag=0; //flag=1 indicates that the required object exists
+                
+                if(ShaftCountRight > ReqdShaftCountInt){
+                        //the bot has covered the required distance
+                        //turn the bot left and check for presence of object
+                
+                        stop();         //stop, and send a signal to MATLAB
+                        servo_1(180);   //turn the arm left to check for the pres
+      ence of an object
+                        _delay_ms(2000);
+                        servo_2(180);   //open the arm of the robot - make it rea
+      dy to grab the object
+                        UDR0=0x01;              //send the signal to MATLAB
+                        _delay_ms(20000);    //suspend the execution of this func
+      tion
+                        ShaftCountRight = 0;
+                        return;
+                }
+
+                if(Center_white_line>0x58)
+                {
+                        flag=1;
+                        forward();
+                        velocity(150,150);
+                }
+
+                if((Left_white_line<0x58) && (flag==0))
+                {
+                        flag=1;
+                        forward();
+                        velocity(130,50);
+                }
+
+                if((Right_white_line<0x58) && (flag==0))
+                {
+                        flag=1;
+                        forward();
+                        velocity(50,130);
+                }
+
+                if(Center_white_line<0x58 && Left_white_line<0x58 && 
+      Right_white_line<0x58)
+                {
+                        forward();
+                        velocity(0,0);
+                }
+        }
+
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a553566c3061d7dc07ac639a71aaff70d}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!drop\_\-object@{drop\_\-object}}
+\index{drop\_\-object@{drop\_\-object}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{drop\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}void drop\_\-object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a553566c3061d7dc07ac639a71aaff70d}
+
+\begin{DoxyCode}
+                  {
+        //servo_1(180);
+        servo_2(180);
+        //servo_3(50);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a0b5f946b51550fe862b59f91ae5fe9f9}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!forward@{forward}}
+\index{forward@{forward}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}void forward (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a0b5f946b51550fe862b59f91ae5fe9f9}
+
+\begin{DoxyCode}
+{
+  motion_set(0x06);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a3a0711f34af615c274e67a580696f9ad}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!forward\_\-mm@{forward\_\-mm}}
+\index{forward\_\-mm@{forward\_\-mm}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{forward\_\-mm}]{\setlength{\rightskip}{0pt plus 5cm}void forward\_\-mm (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{DistanceInMM}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a3a0711f34af615c274e67a580696f9ad}
+
+\begin{DoxyCode}
+{
+ forward();
+ linear_distance_mm(DistanceInMM);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_ab01199c927ceda6f9520c7afb0f1b099}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!init\_\-devices@{init\_\-devices}}
+\index{init\_\-devices@{init\_\-devices}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{init\_\-devices}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-devices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_ab01199c927ceda6f9520c7afb0f1b099}
+
+\begin{DoxyCode}
+{
+    cli(); //Clears the global interrupts
+        port_init();
+        uart0_init(); //Initailize UART1 for serial communiaction
+        adc_init();
+        timer5_init();
+        timer1_init();
+        left_position_encoder_interrupt_init();
+        right_position_encoder_interrupt_init();
+        sei();   // Enables the global interrupt
+
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a98a290ada01eb27fd2ff4564371566e5}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!ISR@{ISR}}
+\index{ISR@{ISR}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (
+\begin{DoxyParamCaption}
+\item[{INT4\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a98a290ada01eb27fd2ff4564371566e5}
+
+\begin{DoxyCode}
+{
+ ShaftCountLeft++;  //increment left shaft position count
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a6225c50fbafa01589351ed487223aacb}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!ISR@{ISR}}
+\index{ISR@{ISR}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (
+\begin{DoxyParamCaption}
+\item[{INT5\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a6225c50fbafa01589351ed487223aacb}
+
+\begin{DoxyCode}
+{
+ ShaftCountRight++;  //increment right shaft position count
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_af55f75f83e87baf043c835ef54412b99}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!lcd\_\-port\_\-config@{lcd\_\-port\_\-config}}
+\index{lcd\_\-port\_\-config@{lcd\_\-port\_\-config}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{lcd\_\-port\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-port\_\-config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_af55f75f83e87baf043c835ef54412b99}
+
+\begin{DoxyCode}
+{
+ DDRC = DDRC | 0xF7; //all the LCD pin's direction set as output
+ PORTC = PORTC & 0x80; // all the LCD pins are set to logic 0 except PORTC 7
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_af58faf62f4e3606140250fb9ed314db5}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!left@{left}}
+\index{left@{left}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{left}]{\setlength{\rightskip}{0pt plus 5cm}void left (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_af58faf62f4e3606140250fb9ed314db5}
+
+\begin{DoxyCode}
+{
+  motion_set(0x05);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_afb8f5ede968f85a107d7bd0e5017634f}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!left\_\-degrees@{left\_\-degrees}}
+\index{left\_\-degrees@{left\_\-degrees}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{left\_\-degrees}]{\setlength{\rightskip}{0pt plus 5cm}void left\_\-degrees (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{Degrees}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_afb8f5ede968f85a107d7bd0e5017634f}
+
+\begin{DoxyCode}
+{
+// 88 pulses for 360 degrees rotation 4.090 degrees per count
+ left(); //Turn left
+ angle_rotate(Degrees);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_ae20e0ac384c729be97c963cb470456a9}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!left\_\-encoder\_\-pin\_\-config@{left\_\-encoder\_\-pin\_\-config}}
+\index{left\_\-encoder\_\-pin\_\-config@{left\_\-encoder\_\-pin\_\-config}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{left\_\-encoder\_\-pin\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void left\_\-encoder\_\-pin\_\-config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_ae20e0ac384c729be97c963cb470456a9}
+
+\begin{DoxyCode}
+{
+ DDRE  = DDRE & 0xEF;  //Set the direction of the PORTE 4 pin as input
+ PORTE = PORTE | 0x10; //Enable internal pullup for PORTE 4 pin
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_aff7831bb17c1206ab082415ee14e21b1}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!left\_\-position\_\-encoder\_\-interrupt\_\-init@{left\_\-position\_\-encoder\_\-interrupt\_\-init}}
+\index{left\_\-position\_\-encoder\_\-interrupt\_\-init@{left\_\-position\_\-encoder\_\-interrupt\_\-init}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{left\_\-position\_\-encoder\_\-interrupt\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void left\_\-position\_\-encoder\_\-interrupt\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_aff7831bb17c1206ab082415ee14e21b1}
+
+\begin{DoxyCode}
+{
+ cli(); //Clears the global interrupt
+ EICRB = EICRB | 0x02; // INT4 is set to trigger with falling edge
+ EIMSK = EIMSK | 0x10; // Enable Interrupt INT4 for left position encoder
+ sei();   // Enables the global interrupt 
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_afc027345bdb5eb901ff0d7aa5ffa7306}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!linear\_\-distance\_\-mm@{linear\_\-distance\_\-mm}}
+\index{linear\_\-distance\_\-mm@{linear\_\-distance\_\-mm}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{linear\_\-distance\_\-mm}]{\setlength{\rightskip}{0pt plus 5cm}void linear\_\-distance\_\-mm (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{DistanceInMM}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_afc027345bdb5eb901ff0d7aa5ffa7306}
+
+\begin{DoxyCode}
+{
+ float ReqdShaftCount = 0;
+ unsigned long int ReqdShaftCountInt = 0;
+
+ ReqdShaftCount = DistanceInMM / 5.338; // division by resolution to get shaft co
+      unt
+ ReqdShaftCountInt = (unsigned long int) ReqdShaftCount;
+  
+ ShaftCountRight = 0;
+ while(1)
+ {
+  if(ShaftCountRight > ReqdShaftCountInt)
+  {
+        break;
+  }
+ } 
+ stop(); //Stop action
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a840291bc02cba5474a4cb46a9b9566fe}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!main@{main}}
+\index{main@{main}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+\begin{DoxyCode}
+{
+        init_devices(); //initialize the devices
+        c1=0;
+        do_work();
+        //reach_dest(2,1);
+        while(1);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a17cf811a885634d71a23e8d4a20457f0}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!motion\_\-pin\_\-config@{motion\_\-pin\_\-config}}
+\index{motion\_\-pin\_\-config@{motion\_\-pin\_\-config}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{motion\_\-pin\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void motion\_\-pin\_\-config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a17cf811a885634d71a23e8d4a20457f0}
+
+\begin{DoxyCode}
+{
+ DDRA = DDRA | 0x0F;
+ PORTA = PORTA & 0xF0;
+ DDRL = DDRL | 0x18;   //Setting PL3 and PL4 pins as output for PWM generation
+ PORTL = PORTL | 0x18; //PL3 and PL4 pins are for velocity control using PWM.
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a10cb8a1450bfb05cd9c72ad09ce7f2fe}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!motion\_\-set@{motion\_\-set}}
+\index{motion\_\-set@{motion\_\-set}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{motion\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}void motion\_\-set (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{Direction}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a10cb8a1450bfb05cd9c72ad09ce7f2fe}
+
+\begin{DoxyCode}
+{
+ unsigned char PortARestore = 0;
+
+ Direction &= 0x0F;             // removing upper nibbel for the protection
+ PortARestore = PORTA;          // reading the PORTA original status
+ PortARestore &= 0xF0;          // making lower direction nibbel to 0
+ PortARestore |= Direction; // adding lower nibbel for forward command and restor
+      ing the PORTA status
+ PORTA = PortARestore;          // executing the command
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a049f338430ccb37404fd4bd4f505a0fa}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!motors\_\-delay@{motors\_\-delay}}
+\index{motors\_\-delay@{motors\_\-delay}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{motors\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}void motors\_\-delay (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a049f338430ccb37404fd4bd4f505a0fa}
+\hypertarget{_pos___con___interrupts_8c_a15fb3bddc638cecc4b4ce8532982e538}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!move\_\-till\_\-junction@{move\_\-till\_\-junction}}
+\index{move\_\-till\_\-junction@{move\_\-till\_\-junction}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{move\_\-till\_\-junction}]{\setlength{\rightskip}{0pt plus 5cm}void move\_\-till\_\-junction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a15fb3bddc638cecc4b4ce8532982e538}
+
+\begin{DoxyCode}
+{
+        init_devices(); 
+        float ReqdShaftCount = 0;
+        unsigned long int ReqdShaftCountInt = 0;
+
+        ReqdShaftCount = 100 / 5.338; // division by resolution to get shaft coun
+      t
+        ReqdShaftCountInt = (unsigned long int) ReqdShaftCount;
+  
+        ShaftCountRight = 0;
+
+        while(1)
+        {
+
+                Left_white_line = ADC_Conversion(3);    //Getting data of Left WL
+       Sensor
+                Center_white_line = ADC_Conversion(2);  //Getting data of Center 
+      WL Sensor
+                Right_white_line = ADC_Conversion(1);   //Getting data of Right W
+      L Sensor
+
+                flag=0; //flag=1 indicates that the required object exists
+        
+                if(ShaftCountRight > ReqdShaftCountInt){
+                        //the bot has covered the required distance
+                        //turn the bot left and check for presence of object
+                        stop();
+                        UDR0=0x01;
+                        _delay_ms(2000);    //image processing time
+                        ShaftCountRight = 0;
+                        return;
+                }
+
+
+                if(Center_white_line>0x58)
+                {
+                        flag=1;
+                        forward();
+                        velocity(150,150);
+                }
+
+                if((Left_white_line<0x58) && (flag==0))
+                {
+                        flag=1;
+                        forward();
+                        velocity(130,50);
+                }
+
+                if((Right_white_line<0x58) && (flag==0))
+                {
+                        flag=1;
+                        forward();
+                        velocity(50,130);
+                }
+
+                if(Center_white_line<0x58 && Left_white_line<0x58 && 
+      Right_white_line<0x58)
+                {
+                        forward();
+                        velocity(0,0);
+                }
+        }
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a5c2ba800834495bb295891490cb1c760}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!port\_\-init@{port\_\-init}}
+\index{port\_\-init@{port\_\-init}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{port\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void port\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a5c2ba800834495bb295891490cb1c760}
+
+\begin{DoxyCode}
+{
+
+ servo1_pin_config(); //Configure PORTB 5 pin for servo motor 1 operation
+ servo2_pin_config(); //Configure PORTB 6 pin for servo motor 2 operation 
+ servo3_pin_config(); //Configure PORTB 7 pin for servo motor 3 operation  
+
+
+ motion_pin_config(); //robot motion pins config
+ //lcd_port_config();
+ adc_pin_config();
+ left_encoder_pin_config(); //left encoder pin config
+ right_encoder_pin_config(); //right encoder pin config 
+ 
+ 
+        motion_pin_config();
+        buzzer_pin_config();
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_af1987bcf7f4a9f3bfbb930ace592d829}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!print\_\-sensor@{print\_\-sensor}}
+\index{print\_\-sensor@{print\_\-sensor}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{print\_\-sensor}]{\setlength{\rightskip}{0pt plus 5cm}void print\_\-sensor (
+\begin{DoxyParamCaption}
+\item[{char}]{row, }
+\item[{char}]{coloumn, }
+\item[{unsigned char}]{channel}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_af1987bcf7f4a9f3bfbb930ace592d829}
+
+\begin{DoxyCode}
+{
+        
+        ADC_Value = ADC_Conversion(channel);
+        //lcd_print(row, coloumn, ADC_Value, 3);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a9034be41e47d844c845946f5d5dd36d4}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!reach\_\-dest@{reach\_\-dest}}
+\index{reach\_\-dest@{reach\_\-dest}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{reach\_\-dest}]{\setlength{\rightskip}{0pt plus 5cm}void reach\_\-dest (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a9034be41e47d844c845946f5d5dd36d4}
+
+\begin{DoxyCode}
+                             {
+        //the function which makes the robot reach its destination
+        
+        int count_vertical = a; //the # times the bot should move straight before
+       turning
+        int count_horizontal = b;       //the # times the bot should move straigh
+      t after turning 
+        int n_moved_hor = 0;    //the # times the bot has already move forward
+        int n_moved_vert = 0;   //the # times the bot has already moved forward a
+      fter making the turn
+
+        while(n_moved_vert < count_vertical){
+                //move ahead till the next junction
+                move_till_junction();
+                n_moved_vert++;
+        }
+
+        //turn left/right
+        if(b > 0){
+                //right_degrees(90);    
+                left_degrees(90);
+        }
+
+        while(n_moved_hor < count_horizontal){
+                //move ahead till the next junction
+                move_till_junction();
+                n_moved_hor++;
+        }
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_ae56b9a694abd24fe3e7af591fc50b748}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!right@{right}}
+\index{right@{right}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{right}]{\setlength{\rightskip}{0pt plus 5cm}void right (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_ae56b9a694abd24fe3e7af591fc50b748}
+
+\begin{DoxyCode}
+{
+  motion_set(0x0A);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a8cf9e2dc043ac2c788c78e6dd407e6e8}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!right\_\-degrees@{right\_\-degrees}}
+\index{right\_\-degrees@{right\_\-degrees}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{right\_\-degrees}]{\setlength{\rightskip}{0pt plus 5cm}void right\_\-degrees (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{Degrees}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a8cf9e2dc043ac2c788c78e6dd407e6e8}
+
+\begin{DoxyCode}
+{
+// 88 pulses for 360 degrees rotation 4.090 degrees per count
+ right(); //Turn right
+ angle_rotate(Degrees);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a0db68d18b578ab9e12bc1d80915ef0d7}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!right\_\-encoder\_\-pin\_\-config@{right\_\-encoder\_\-pin\_\-config}}
+\index{right\_\-encoder\_\-pin\_\-config@{right\_\-encoder\_\-pin\_\-config}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{right\_\-encoder\_\-pin\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void right\_\-encoder\_\-pin\_\-config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a0db68d18b578ab9e12bc1d80915ef0d7}
+
+\begin{DoxyCode}
+{
+ DDRE  = DDRE & 0xDF;  //Set the direction of the PORTE 4 pin as input
+ PORTE = PORTE | 0x20; //Enable internal pullup for PORTE 4 pin
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a1333f7476858c2d76f7d725dfb0e7d88}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!right\_\-position\_\-encoder\_\-interrupt\_\-init@{right\_\-position\_\-encoder\_\-interrupt\_\-init}}
+\index{right\_\-position\_\-encoder\_\-interrupt\_\-init@{right\_\-position\_\-encoder\_\-interrupt\_\-init}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{right\_\-position\_\-encoder\_\-interrupt\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void right\_\-position\_\-encoder\_\-interrupt\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a1333f7476858c2d76f7d725dfb0e7d88}
+
+\begin{DoxyCode}
+{
+ cli(); //Clears the global interrupt
+ EICRB = EICRB | 0x08; // INT5 is set to trigger with falling edge
+ EIMSK = EIMSK | 0x20; // Enable Interrupt INT5 for right position encoder
+ sei();   // Enables the global interrupt 
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_af87425963403c39dd2a5686722662e1b}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!servo1\_\-pin\_\-config@{servo1\_\-pin\_\-config}}
+\index{servo1\_\-pin\_\-config@{servo1\_\-pin\_\-config}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{servo1\_\-pin\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void servo1\_\-pin\_\-config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_af87425963403c39dd2a5686722662e1b}
+
+\begin{DoxyCode}
+{
+ DDRB  = DDRB | 0x20;  //making PORTB 5 pin output
+ PORTB = PORTB | 0x20; //setting PORTB 5 pin to logic 1
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a9cbd58ccc49c66f6691fc3e8a4e06c07}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!servo2\_\-pin\_\-config@{servo2\_\-pin\_\-config}}
+\index{servo2\_\-pin\_\-config@{servo2\_\-pin\_\-config}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{servo2\_\-pin\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void servo2\_\-pin\_\-config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a9cbd58ccc49c66f6691fc3e8a4e06c07}
+
+\begin{DoxyCode}
+{
+ DDRB  = DDRB | 0x40;  //making PORTB 6 pin output
+ PORTB = PORTB | 0x40; //setting PORTB 6 pin to logic 1
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_aea7136b3f5f3dee0bba462ad740018e0}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!servo3\_\-pin\_\-config@{servo3\_\-pin\_\-config}}
+\index{servo3\_\-pin\_\-config@{servo3\_\-pin\_\-config}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{servo3\_\-pin\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void servo3\_\-pin\_\-config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_aea7136b3f5f3dee0bba462ad740018e0}
+
+\begin{DoxyCode}
+{
+ DDRB  = DDRB | 0x80;  //making PORTB 7 pin output
+ PORTB = PORTB | 0x80; //setting PORTB 7 pin to logic 1
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a5e83e38113e61aa98a5737499e18a31b}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!servo\_\-1@{servo\_\-1}}
+\index{servo\_\-1@{servo\_\-1}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{servo\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}void servo\_\-1 (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{degrees}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a5e83e38113e61aa98a5737499e18a31b}
+
+\begin{DoxyCode}
+{
+ float PositionPanServo = 0;
+ PositionPanServo = ((float)degrees / 2.25) + 21.0;
+ OCR1AH = 0x00;
+ OCR1AL = (unsigned char) PositionPanServo;
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a581d9af2c6c9d23ca521f637075e1bc1}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!servo\_\-2@{servo\_\-2}}
+\index{servo\_\-2@{servo\_\-2}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{servo\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}void servo\_\-2 (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{degrees}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a581d9af2c6c9d23ca521f637075e1bc1}
+
+\begin{DoxyCode}
+{
+ float PositionTiltServo = 0;
+ PositionTiltServo = ((float)degrees / 2.25) + 21.0;
+ OCR1BH = 0x00;
+ OCR1BL = (unsigned char) PositionTiltServo;
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a13cace908a54e6c7b6e7ff259b2b1d90}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!servo\_\-3@{servo\_\-3}}
+\index{servo\_\-3@{servo\_\-3}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{servo\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}void servo\_\-3 (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{degrees}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a13cace908a54e6c7b6e7ff259b2b1d90}
+
+\begin{DoxyCode}
+{
+ float PositionTiltServo = 0;
+ PositionTiltServo = ((float)degrees / 2.25) + 21.0;
+ OCR1CH = 0x00;
+ OCR1CL = (unsigned char) PositionTiltServo;
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_ab5f8e79f6ffa3be348924e573e8dcfd1}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!SIGNAL@{SIGNAL}}
+\index{SIGNAL@{SIGNAL}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{SIGNAL}]{\setlength{\rightskip}{0pt plus 5cm}SIGNAL (
+\begin{DoxyParamCaption}
+\item[{SIG\_\-USART0\_\-RECV}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_ab5f8e79f6ffa3be348924e573e8dcfd1}
+
+\begin{DoxyCode}
+{
+        data = UDR0;                            //making copy of data from UDR0 i
+      n 'data' variable 
+
+        UDR0 = data;                            //echo data back to PC
+
+                if(data == 0x38) //ASCII value of 8
+                {
+                        if(c1==0) a1= 8;
+                        else {b1=8; c1=1;}
+                        PORTA=0x05;
+                }
+
+                if(data == 0x32) //ASCII value of 2
+                {
+                        if(c1==0) a1= 2;
+                        else {b1=2; c1=1;}
+                        PORTA=0x09; //back
+                }
+
+                if(data == 0x34) //ASCII value of 4
+                {
+                        if(c1==0) a1= 4;
+                        else {b1=4; c1=1;}
+                        PORTA=0x05;  //left
+                }
+
+                if(data == 0x36) //ASCII value of 6
+                {
+                        if(c1==0) a1= 6;
+                        else {b1=6; c1=1;}
+                        PORTA=0x0A; //right
+                }
+
+                if(data == 0x35) //ASCII value of 5
+                {
+                        if(c1==0) a1= 5;
+                        else {b1=5; c1=1;}
+                        PORTA=0x00; //stop
+                }
+                
+                if(data == 0x72) {      //ASCII of "r"
+                        PORTA=0x06;  //forward
+                }
+
+                if(data == 0x37) //ASCII value of 7
+                {
+                        if(c1==0) a1= 7;
+                        else {b1=7; c1=1;}
+                        buzzer_on();
+                }
+
+                if(data == 0x39) //ASCII value of 9
+                {
+                        if(c1==0) a1= 9;
+                        else {b1=9; c1=1;}
+                        buzzer_off();
+                }
+
+                if(data == 0x31) //ASCII value of 1 - implies object found
+                {
+                        g_flag=1;
+                        //grab the object
+                        servo_2(90); //grab the object
+                        _delay_ms(2000);
+
+                        //go back to the front facing position
+                        //servo_1(90);
+                        _delay_ms(4000);
+                        //go back to the front facing position
+
+                        reach_dest(4,2);        //send the bot to the required de
+      stination
+
+                        _delay_ms(2000);
+
+                        drop_object();  //drop the object by opening the arm
+                }
+
+                if(data == 0x30) //ASCII value of 0 - implies object NOT found
+                {
+                        //dont grab the object 
+                        //just go back to the front facing position
+                        servo_1(90);
+                        _delay_ms(2000);
+                        servo_2(90);
+                        _delay_ms(2000);
+
+                        do_work();
+
+                }
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a9f675d6f341de272935fc3a4bd7683ce}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!soft\_\-left@{soft\_\-left}}
+\index{soft\_\-left@{soft\_\-left}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{soft\_\-left}]{\setlength{\rightskip}{0pt plus 5cm}void soft\_\-left (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a9f675d6f341de272935fc3a4bd7683ce}
+
+\begin{DoxyCode}
+{
+ motion_set(0x04);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a84253b553e3fc3d181945f643e7aa82d}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!soft\_\-left\_\-2@{soft\_\-left\_\-2}}
+\index{soft\_\-left\_\-2@{soft\_\-left\_\-2}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{soft\_\-left\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}void soft\_\-left\_\-2 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a84253b553e3fc3d181945f643e7aa82d}
+
+\begin{DoxyCode}
+{
+ motion_set(0x01);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a3bc73fd02a38e7bd23dd8ecd87601c51}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!soft\_\-left\_\-2\_\-degrees@{soft\_\-left\_\-2\_\-degrees}}
+\index{soft\_\-left\_\-2\_\-degrees@{soft\_\-left\_\-2\_\-degrees}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{soft\_\-left\_\-2\_\-degrees}]{\setlength{\rightskip}{0pt plus 5cm}void soft\_\-left\_\-2\_\-degrees (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{Degrees}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a3bc73fd02a38e7bd23dd8ecd87601c51}
+
+\begin{DoxyCode}
+{
+ // 176 pulses for 360 degrees rotation 2.045 degrees per count
+ soft_left_2(); //Turn reverse soft left
+ Degrees=Degrees*2;
+ angle_rotate(Degrees);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a1013e84d64ce4284bdd33542678b36ba}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!soft\_\-left\_\-degrees@{soft\_\-left\_\-degrees}}
+\index{soft\_\-left\_\-degrees@{soft\_\-left\_\-degrees}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{soft\_\-left\_\-degrees}]{\setlength{\rightskip}{0pt plus 5cm}void soft\_\-left\_\-degrees (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{Degrees}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a1013e84d64ce4284bdd33542678b36ba}
+
+\begin{DoxyCode}
+{
+ // 176 pulses for 360 degrees rotation 2.045 degrees per count
+ soft_left(); //Turn soft left
+ Degrees=Degrees*2;
+ angle_rotate(Degrees);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a86d205d334c3761364b7db60cb0257b6}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!soft\_\-right@{soft\_\-right}}
+\index{soft\_\-right@{soft\_\-right}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{soft\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}void soft\_\-right (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a86d205d334c3761364b7db60cb0257b6}
+
+\begin{DoxyCode}
+{
+ motion_set(0x02);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a6ce417f3e8c28824215c61637845f18c}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!soft\_\-right\_\-2@{soft\_\-right\_\-2}}
+\index{soft\_\-right\_\-2@{soft\_\-right\_\-2}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{soft\_\-right\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}void soft\_\-right\_\-2 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a6ce417f3e8c28824215c61637845f18c}
+
+\begin{DoxyCode}
+{
+ motion_set(0x08);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_ac5f0c8df1383322f922faf6a4ea30d57}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!soft\_\-right\_\-2\_\-degrees@{soft\_\-right\_\-2\_\-degrees}}
+\index{soft\_\-right\_\-2\_\-degrees@{soft\_\-right\_\-2\_\-degrees}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{soft\_\-right\_\-2\_\-degrees}]{\setlength{\rightskip}{0pt plus 5cm}void soft\_\-right\_\-2\_\-degrees (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{Degrees}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_ac5f0c8df1383322f922faf6a4ea30d57}
+
+\begin{DoxyCode}
+{
+ // 176 pulses for 360 degrees rotation 2.045 degrees per count
+ soft_right_2();  //Turn reverse soft right
+ Degrees=Degrees*2;
+ angle_rotate(Degrees);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a2c63b1157eee42d68b242cd9a37eec98}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!soft\_\-right\_\-degrees@{soft\_\-right\_\-degrees}}
+\index{soft\_\-right\_\-degrees@{soft\_\-right\_\-degrees}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{soft\_\-right\_\-degrees}]{\setlength{\rightskip}{0pt plus 5cm}void soft\_\-right\_\-degrees (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{Degrees}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a2c63b1157eee42d68b242cd9a37eec98}
+
+\begin{DoxyCode}
+{
+ // 176 pulses for 360 degrees rotation 2.045 degrees per count
+ soft_right();  //Turn soft right
+ Degrees=Degrees*2;
+ angle_rotate(Degrees);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_aacf6bf8e121fea8b0a92d7197b73fe27}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!stop@{stop}}
+\index{stop@{stop}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_aacf6bf8e121fea8b0a92d7197b73fe27}
+
+\begin{DoxyCode}
+{
+  motion_set(0x00);
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a968c314be24f7043eeff034ebf7c4a03}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!timer1\_\-init@{timer1\_\-init}}
+\index{timer1\_\-init@{timer1\_\-init}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{timer1\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void timer1\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a968c314be24f7043eeff034ebf7c4a03}
+
+
+\{COM1A1=1, COM1A0=0; COM1B1=1, COM1B0=0; COM1C1=1 COM1C0=0\} For Overriding normal port functionalit to OCRnA outputs. \{WGM11=1, WGM10=1\} Along With WGM12 in TCCR1B for Selecting FAST PWM Mode 
+
+
+\begin{DoxyCode}
+{
+ TCCR1B = 0x00; //stop
+ TCNT1H = 0xFC; //Counter high value to which OCR1xH value is to be compared with
+      
+ TCNT1L = 0x01;    //Counter low value to which OCR1xH value is to be compared wi
+      th
+ OCR1AH = 0x03;    //Output compare eegister high value for servo 1
+ OCR1AL = 0xFF;    //Output Compare Register low Value For servo 1
+ OCR1BH = 0x03;    //Output compare eegister high value for servo 2
+ OCR1BL = 0xFF;    //Output Compare Register low Value For servo 2
+ OCR1CH = 0x03;    //Output compare eegister high value for servo 3
+ OCR1CL = 0xFF;    //Output Compare Register low Value For servo 3
+ ICR1H  = 0x03;    
+ ICR1L  = 0xFF;
+ TCCR1A = 0xAB; 
+ TCCR1C = 0x00;
+ TCCR1B = 0x0C; //WGM12=1; CS12=1, CS11=0, CS10=0 (Prescaler=256)
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_a578f7cc9b705ce549aa856c927b102e8}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!timer5\_\-init@{timer5\_\-init}}
+\index{timer5\_\-init@{timer5\_\-init}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{timer5\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void timer5\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_a578f7cc9b705ce549aa856c927b102e8}
+
+
+\{COM5A1=1, COM5A0=0; COM5B1=1, COM5B0=0; COM5C1=1 COM5C0=0\} For Overriding normal port functionalit to OCRnA outputs. \{WGM51=0, WGM50=1\} Along With WGM52 in TCCR5B for Selecting FAST PWM 8-\/bit Mode 
+
+
+\begin{DoxyCode}
+{
+        TCCR5B = 0x00;  //Stop
+        TCNT5H = 0xFF;  //Counter higher 8-bit value to which OCR5xH value is com
+      pared with
+        TCNT5L = 0x01;  //Counter lower 8-bit value to which OCR5xH value is comp
+      ared with
+        OCR5AH = 0x00;  //Output compare register high value for Left Motor
+        OCR5AL = 0xFF;  //Output compare register low value for Left Motor
+        OCR5BH = 0x00;  //Output compare register high value for Right Motor
+        OCR5BL = 0xFF;  //Output compare register low value for Right Motor
+        OCR5CH = 0x00;  //Output compare register high value for Motor C1
+        OCR5CL = 0xFF;  //Output compare register low value for Motor C1
+        TCCR5A = 0xA9;  
+        TCCR5B = 0x0B;  //WGM12=1; CS12=0, CS11=1, CS10=1 (Prescaler=64)
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_abbbf5055286d09a73b87f57f71dfd0b9}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!uart0\_\-init@{uart0\_\-init}}
+\index{uart0\_\-init@{uart0\_\-init}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{uart0\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uart0\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_abbbf5055286d09a73b87f57f71dfd0b9}
+
+\begin{DoxyCode}
+{
+ UCSR0B = 0x00; //disable while setting baud rate
+ UCSR0A = 0x00;
+ UCSR0C = 0x06;
+ UBRR0L = 0x47; //set baud rate lo
+ UBRR0H = 0x00; //set baud rate hi
+ UCSR0B = 0x98;
+}
+\end{DoxyCode}
+\hypertarget{_pos___con___interrupts_8c_aeb91982ef0f52d5adeb343ea450e84a0}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!velocity@{velocity}}
+\index{velocity@{velocity}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}void velocity (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{left\_\-motor, }
+\item[{unsigned char}]{right\_\-motor}
+\end{DoxyParamCaption}
+)}}
+\label{_pos___con___interrupts_8c_aeb91982ef0f52d5adeb343ea450e84a0}
+
+\begin{DoxyCode}
+{
+        OCR5AL = (unsigned char)left_motor;
+        OCR5BL = (unsigned char)right_motor;
+}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_pos___con___interrupts_8c_a4eaab29a4b95a3df43f309d4db0537f9}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!a1@{a1}}
+\index{a1@{a1}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{a1}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf a1}}}
+\label{_pos___con___interrupts_8c_a4eaab29a4b95a3df43f309d4db0537f9}
+\hypertarget{_pos___con___interrupts_8c_a7478dc1bbf98fafa771a4e2c1a27f70b}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!ADC\_\-Value@{ADC\_\-Value}}
+\index{ADC\_\-Value@{ADC\_\-Value}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{ADC\_\-Value}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf ADC\_\-Value}}}
+\label{_pos___con___interrupts_8c_a7478dc1bbf98fafa771a4e2c1a27f70b}
+\hypertarget{_pos___con___interrupts_8c_a80a694fb0f4379c31cdb69faf50a4b4a}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!b1@{b1}}
+\index{b1@{b1}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{b1}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf b1}}}
+\label{_pos___con___interrupts_8c_a80a694fb0f4379c31cdb69faf50a4b4a}
+\hypertarget{_pos___con___interrupts_8c_a7e14c1f8a9ffaa9d4a89828706d25998}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!c1@{c1}}
+\index{c1@{c1}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{c1}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf c1}}}
+\label{_pos___con___interrupts_8c_a7e14c1f8a9ffaa9d4a89828706d25998}
+\hypertarget{_pos___con___interrupts_8c_ac84e16450d12eed142395bfcf7444ee7}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!Center\_\-white\_\-line@{Center\_\-white\_\-line}}
+\index{Center\_\-white\_\-line@{Center\_\-white\_\-line}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{Center\_\-white\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf Center\_\-white\_\-line} = 0}}
+\label{_pos___con___interrupts_8c_ac84e16450d12eed142395bfcf7444ee7}
+\hypertarget{_pos___con___interrupts_8c_a433b1c9921d3b90f7c145c781a43f325}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!data@{data}}
+\index{data@{data}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf data}}}
+\label{_pos___con___interrupts_8c_a433b1c9921d3b90f7c145c781a43f325}
+Written by: Sachitanand Malewar, NEX Robotics Pvt. Ltd. AVR Studio Version 4.17, Build 666
+
+Date: 13th January 2010
+
+Application example: Robot control over serial port via ZigBee wireless comunication module (located on the ATMEGA260 microcontroller adaptor board)
+
+Concepts covered: serial communication
+
+Serial Port used: UART0
+
+There are two components to the motion control: 1. Direction control using pins PORTA0 to PORTA3 2. Velocity control by PWM on pins PL3 and PL4 using OC5A and OC5B.
+
+In this experiment for the simplicity PL3 and PL4 are kept at logic 1.
+
+Pins for PWM are kept at logic 1.
+
+Connection Details:
+
+Motion control: L-\/1-\/-\/-\/-\/$>$PA0; L-\/2-\/-\/-\/-\/$>$PA1; R-\/1-\/-\/-\/-\/$>$PA2; R-\/2-\/-\/-\/-\/$>$PA3; PL3 (OC5A) -\/-\/-\/-\/$>$ Logic 1; PL4 (OC5B) -\/-\/-\/-\/$>$ Logic 1;
+
+Serial Communication: PORTD 2 -\/-\/$>$ RXD1 UART1 receive for RS232 serial communication PORTD 3 -\/-\/$>$ TXD1 UART1 transmit for RS232 serial communication
+
+PORTH 0 -\/-\/$>$ RXD2 UART 2 receive for USB -\/ RS232 communication PORTH 1 -\/-\/$>$ TXD2 UART 2 transmit for USB -\/ RS232 communication
+
+PORTE 0 -\/-\/$>$ RXD0 UART0 receive for ZigBee wireless communication PORTE 1 -\/-\/$>$ TXD0 UART0 transmit for ZigBee wireless communication
+
+PORTJ 0 -\/-\/$>$ RXD3 UART3 receive available on microcontroller expainsion board PORTJ 1 -\/-\/$>$ TXD3 UART3 transmit available on microcontroller expainsion board
+
+Serial communication baud rate: 9600bps To control robot use number pad of the keyboard which is located on the right hand side of the keyboard. Make sure that NUM lock is on.
+
+Commands: Keyboard Key ASCII value Action 8 0x38 Forward 2 0x32 Backward 4 0x34 Left 6 0x36 Right 5 0x35 Stop 7 0x37 Buzzer on 9 0x39 Buzzer off
+
+Note:
+
+1. Make sure that in the configuration options following settings are done for proper operation of the code
+
+Microcontroller: atmega2560 Frequency: 11059200 Optimization: -\/O0 (For more information read section: Selecting proper optimization options below figure 4.22 in the hardware manual)
+
+2. Difference between the codes for RS232 serial, USB and wireless communication is only in the serial port number. Rest of the things are the same.
+
+3. For USB communication check the Jumper 1 position on the ATMEGA2560 microcontroller adaptor board
+
+Copyright (c) 2010, NEX Robotics Pvt. Ltd. -\/$\ast$-\/ c -\/$\ast$-\/ All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+Neither the name of the copyright holders nor the names of contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+Source code can be used for academic purpose. For commercial use permission form the author needs to be taken.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \char`\"{}AS IS\char`\"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Software released under Creative Commence cc by-\/nc-\/sa licence. For legal information refer to: \href{http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode}{\tt http://creativecommons.org/licenses/by-\/nc-\/sa/3.0/legalcode} \hypertarget{_pos___con___interrupts_8c_a9719b725d5dde7ae77cf440b08ab2e21}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!Degrees@{Degrees}}
+\index{Degrees@{Degrees}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{Degrees}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf Degrees}}}
+\label{_pos___con___interrupts_8c_a9719b725d5dde7ae77cf440b08ab2e21}
+\hypertarget{_pos___con___interrupts_8c_a829b33ef64236fbd112c4c6973051b8b}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!flag@{flag}}
+\index{flag@{flag}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{flag}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf flag} = 0}}
+\label{_pos___con___interrupts_8c_a829b33ef64236fbd112c4c6973051b8b}
+\hypertarget{_pos___con___interrupts_8c_ae6e15b0f6771b4754dc724ff8f054a9b}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!g\_\-flag@{g\_\-flag}}
+\index{g\_\-flag@{g\_\-flag}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{g\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf g\_\-flag} = 0}}
+\label{_pos___con___interrupts_8c_ae6e15b0f6771b4754dc724ff8f054a9b}
+\hypertarget{_pos___con___interrupts_8c_a40b3670b4091cb5fd22b40e0a6339864}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!Left\_\-white\_\-line@{Left\_\-white\_\-line}}
+\index{Left\_\-white\_\-line@{Left\_\-white\_\-line}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{Left\_\-white\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf Left\_\-white\_\-line} = 0}}
+\label{_pos___con___interrupts_8c_a40b3670b4091cb5fd22b40e0a6339864}
+\hypertarget{_pos___con___interrupts_8c_a714d95b2e8eafc387d408dbd07bb267d}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!Right\_\-white\_\-line@{Right\_\-white\_\-line}}
+\index{Right\_\-white\_\-line@{Right\_\-white\_\-line}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{Right\_\-white\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf Right\_\-white\_\-line} = 0}}
+\label{_pos___con___interrupts_8c_a714d95b2e8eafc387d408dbd07bb267d}
+\hypertarget{_pos___con___interrupts_8c_ad4d883fb592328b3a01dcd7c28b5a0ae}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!ShaftCountLeft@{ShaftCountLeft}}
+\index{ShaftCountLeft@{ShaftCountLeft}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{ShaftCountLeft}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long int {\bf ShaftCountLeft} = 0}}
+\label{_pos___con___interrupts_8c_ad4d883fb592328b3a01dcd7c28b5a0ae}
+\hypertarget{_pos___con___interrupts_8c_a397e402cf787d59092e911b079f08b12}{
+\index{Pos\_\-Con\_\-Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}!ShaftCountRight@{ShaftCountRight}}
+\index{ShaftCountRight@{ShaftCountRight}!Pos_Con_Interrupts.c@{Pos\_\-Con\_\-Interrupts.c}}
+\subsubsection[{ShaftCountRight}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long int {\bf ShaftCountRight} = 0}}
+\label{_pos___con___interrupts_8c_a397e402cf787d59092e911b079f08b12}
